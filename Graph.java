@@ -9,18 +9,22 @@ public class Graph<E> {
         labels = (E[]) new Object[n];
     }
 
+    /** Gets the label of a vertex */
     public E getLabel (int vertex) {
         return labels[vertex];
     }
 
+    /** Tests whether an edge exists */
     public boolean isEdge(int source, int target) {
         return edges[source][target];
     }
 
+    /** Adds an edge */
     public void addEdge(int source, int target) {
         edges[source][target] = true;
     }
 
+    /** Obtains a list of neighbors of a specified vertex */
     public int[] neighbors (int vertex) {
         int i;
         int count = 0;
@@ -40,12 +44,12 @@ public class Graph<E> {
         return answer;
     }
 
-    /**Removes an edge */
+    /** Removes an edge */
     public void removeEdge(int source, int target) {
         edges[source][target] = false;
     }
 
-    /**Changes the label of a vertex in the graph. */
+    /** Changes the label of a vertex in the graph. */
     public void setLabel(int vertex, E newLabel) {
         labels[vertex] = newLabel;
     }
