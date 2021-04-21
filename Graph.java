@@ -39,4 +39,19 @@ public class Graph<E> {
         }
         return answer;
     }
+
+    /**Removes an edge */
+    public void removeEdge(int source, int target) {
+        edges[source][target] = false;
+    }
+
+    /**Changes the label of a vertex in the graph. */
+    public void setLabel(int vertex, E newLabel) {
+        labels[vertex] = newLabel;
+    }
+
+    /** Determines the number of vertices in the graph. */
+    public int size(){
+        return labels.length;
+    }
 }
