@@ -58,4 +58,9 @@ public class Graph<E> {
     public int size(){
         return labels.length;
     }
+
+    public QueueInterface<T> getBreadthFirstTraversal(T origin) {
+        resetVertices();
+        
+    }
 }
