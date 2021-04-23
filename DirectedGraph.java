@@ -54,5 +54,24 @@ public class DirectedGraph<T> implements GraphInterface<T>
    return found;
 }
 
+public boolean isEmpty()
+{
+   return vertices.isEmpty();
+}
 
+public void clear()
+{
+   vertices.clear();
+   edgeCount = 0;
+} // end clear
+
+public int getNumberOfVertices()
+{
+   return vertices.getSize();
+} // end getNumberOfVertices
+
+public int getNumberOfEdges()
+{
+   return edgeCount;
+} 
 } // end DirectedGraph
