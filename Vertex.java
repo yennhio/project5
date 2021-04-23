@@ -1,10 +1,29 @@
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import ADTPackage.*;
+
 public class Vertex<T> implements VertexInterface<T> {
     
+    private T label;
+    private ListWithIteratorInterface<Edge> edgeList; // Edges to neighbors
+    private boolean visited;                          // True if visited
+    private VertexInterface<T> previousVertex;        // On path to this vertex
+    private double cost;                              // Of path to this vertex
+    
+    public Vertex(T vertexLabel)
+    {
+       label = vertexLabel;
+       edgeList = new LinkedListWithIterator<>();
+       visited = false;
+       previousVertex = null;
+       cost = 0;
+    }
 
 protected class Edge
 {
    private VertexInterface<T> vertex; // Vertex at end of edge
    private double weight;
+   
 
    protected Edge(VertexInterface<T> endVertex, double edgeWeight)
    {
