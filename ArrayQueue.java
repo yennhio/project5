@@ -1,3 +1,4 @@
+
 public class ArrayQueue<T> implements QueueInterface<T> {
     private T[] queue;
     private int frontIndex;
@@ -12,7 +13,7 @@ public class ArrayQueue<T> implements QueueInterface<T> {
 
     public ArrayQueue(int initialCapacity) {
         integrityOK = false;
-        ensureCapacity(initialCapacity);
+        checkCapacity(initialCapacity);
 
         @SuppressWarnings("unchecked")
         T[] tempQueue = (T[]) new Object[initialCapacity + 1];
@@ -22,9 +23,6 @@ public class ArrayQueue<T> implements QueueInterface<T> {
         integrityOK = true;
     }
 
-    private void checkCapacity() {
-
-    }
     
     public void enqueue(T newEntry) {
         checkIntegrity();
@@ -54,9 +52,6 @@ public class ArrayQueue<T> implements QueueInterface<T> {
         }
     }
 
-    private void checkIntegrity() {
-    }
-
     public T dequeue() {
         checkIntegrity();
         if (isEmpty())
@@ -81,6 +76,21 @@ public class ArrayQueue<T> implements QueueInterface<T> {
         checkIntegrity();
         return frontIndex == ((backIndex + 1) % queue.length);
     }
+
+    private void checkCapacity(int capacity)
+    {
+        if (capacity > MAX_CAPACITY)
+            throw new IllegalStateException("Attempt to create a queue whose " +
+                    "capacity exeeds allowed " +
+                    "maximum of " + MAX_CAPACITY);
+    }
+
+    // Throws an exception if this object is not initialized.
+    private void checkIntegrity()
+    {
+        if (!integrityOK)
+            throw new SecurityException("Object is corrupt.");
+    } 
 
     public void clear() {
         checkIntegrity();   
