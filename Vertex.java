@@ -1,6 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import ADTPackage.*;
+
 
 public class Vertex<T> implements VertexInterface<T> {
     
@@ -51,6 +51,46 @@ public boolean connect(VertexInterface<T> endVertex)
    return connect(endVertex, 0);
 } // end connect
 
+
+public Iterator<VertexInterface<T>> getNeighborIterator()
+{
+   return new NeighborIterator();
+} // end getNeighborIterator
+
+private class NeighborIterator implements Iterator<VertexInterface<T>>
+{
+   private Iterator<Edge> edges;
+   
+   private NeighborIterator()
+   {
+      edges = edgeList.getIterator();
+   } // end default constructor
+   
+   public boolean hasNext()
+   {
+      return edges.hasNext();
+   } // end hasNext
+   
+   public VertexInterface<T> next()
+   {
+      VertexInterface<T> nextNeighbor = null;
+      
+      if (edges.hasNext())
+      {
+         Edge edgeToNextNeighbor = edges.next();
+         nextNeighbor = edgeToNextNeighbor.getEndVertex();
+      }
+      else
+         throw new NoSuchElementException();
+      
+      return nextNeighbor;
+   } // end next
+   
+   public void remove()
+   {
+      throw new UnsupportedOperationException();
+   } // end remove
+} // end NeighborIterator
 
 
 protected class Edge
