@@ -1,11 +1,7 @@
 package GraphPackage;
 import ADTPackage.*; // Classes that implement various ADTs
-/** 
-   An interface of methods that process an existing graph. 
-   @author Frank M. Carrano
-   @author Timothy M. Henry
-   @version 5.0
-*/
+
+
 public interface GraphAlgorithmsInterface<T>
 {
    /** Performs a breadth-first traversal of this graph.
