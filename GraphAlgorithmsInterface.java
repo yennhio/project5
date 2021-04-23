@@ -1,4 +1,3 @@
-package GraphPackage;
 import ADTPackage.*; // Classes that implement various ADTs
 
 

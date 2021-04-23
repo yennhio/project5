@@ -1,4 +1,3 @@
-package GraphPackage;
 
 public interface BasicGraphInterface<T>
 {
