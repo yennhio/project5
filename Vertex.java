@@ -93,6 +93,28 @@ private class NeighborIterator implements Iterator<VertexInterface<T>>
 } // end NeighborIterator
 
 
+public boolean hasNeighbor()
+{
+   return !edgeList.isEmpty();
+} // end hasNeighbor
+
+public VertexInterface<T> getUnvisitedNeighbor()
+{
+   VertexInterface<T> result = null;
+
+   Iterator<VertexInterface<T>> neighbors = getNeighborIterator();
+   while ( neighbors.hasNext() && (result == null) )
+   {
+      VertexInterface<T> nextNeighbor = neighbors.next();
+      if (!nextNeighbor.isVisited())
+         result = nextNeighbor;
+   } // end while
+
+   return result;
+} // end getUnvisitedNeighbor
+
+
+
 protected class Edge
 {
    private VertexInterface<T> vertex; // Vertex at end of edge
