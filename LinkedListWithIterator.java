@@ -186,8 +186,21 @@ public class LinkedListWithIterator<T> implements ListWithIteratorInterface<T>
 			nextNode = firstNode;
 		} // end default constructor
 		
-      // Implementations of the methods in the interface Iterator go here.
+        public T next() {
+            T result;
+            if (hasNext()) {
+            result = nextNode.getData(); 
+            nextNode = nextNode.getNextNode();
+            // Advance iterator
+            }
+            else
+                throw new NoSuchElementException("Illegal call to next(); " +
+                "iterator is after end of list."); return result; // Return next entry in iteration
+            } // end next
 
+            public boolean hasNext() {
+                return nextNode != null; 
+            } // end hasNext
 	} // end IteratorForLinkedList
 	
 	private class Node
