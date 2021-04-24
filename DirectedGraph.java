@@ -119,7 +119,7 @@ public class DirectedGraph<T> implements GraphInterface<T>
 		Iterator<VertexInterface<T>> vertexIterator = vertices.getValueIterator();
 		while (vertexIterator.hasNext())
 		{
-			VertexInterface<T> nextVertex = VertexIterator.next();
+			VertexInterface<T> nextVertex = vertexIterator.next();
 			nextVertex.unvisit();
 			nextVertex.setCost(0);
 			nextVertex.setPredecessor(null);
@@ -198,6 +198,15 @@ public class DirectedGraph<T> implements GraphInterface<T>
 
 		return pathLength;
 	} // end getShortestPath
+
+	public StackInterface<T> getTopologicalOrder() {
+		return null;
+	}
+
+	public double getCheapestPath(T begin, T end, StackInterface<T> path) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 
     
