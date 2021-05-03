@@ -13,8 +13,8 @@ public class BreadthUnitTests {
     @Test
     public void testBFS() {
         test.addEdge(0, 1);
-        test.addEdge(0, 2);
-        test.addEdge(0, 3);
+        test.addEdge(1, 2);
+        test.addEdge(1, 3);
         test.addEdge(2, 3);
         test.addEdge(3, 4);
         test.addEdge(2, 5);
