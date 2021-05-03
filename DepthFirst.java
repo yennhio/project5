@@ -54,4 +54,17 @@ public class DepthFirst {
                 DFSUtil(next, visited);
         }
     }
+
+    public void DFS(int verts)
+    {
+        // Mark all the vertices as
+        // not visited(set as
+        // false by default in java)
+        boolean visited[] = new boolean[vertices];
+ 
+        // Call the recursive helper
+        // function to print DFS
+        // traversal
+        DFSUtil(verts, visited);
+    }
 }
