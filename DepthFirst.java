@@ -15,4 +15,9 @@ public class DepthFirst {
         for (int i = 0; i < verts; ++i)
             adj[i] = new LinkedList();
     }
+
+    public void addEdge(int verts, int end)
+    {
+        adj[verts].add(end);
+    }
 }
