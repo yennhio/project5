@@ -1,10 +1,9 @@
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
 
 public class BreadthUnitTests {
     
-    BreadthFirst test = new BreadthFirst(9);
+    BreadthFirst test = new BreadthFirst(6);
 
     @Test
     public void testAddEdge() {
