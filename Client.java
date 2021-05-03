@@ -39,7 +39,7 @@ public class Client {
         f.addEdge(2, 1);
 
         System.out.println(
-            "Depth First Traversal "
+            "\nDepth First Traversal "
             + "starting from vertex A: ");
  
         f.DFS(0);
