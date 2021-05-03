@@ -63,11 +63,11 @@ public class BreadthFirst {
             Iterator<Integer> iter = adj[start].listIterator();
             while (iter.hasNext())
             {
-                int n = iter.next();
-                if (!visited[n])
+                int next = iter.next();
+                if (!visited[next])
                 {
-                    visited[n] = true;
-                    queue.add(n);
+                    visited[next] = true;
+                    queue.add(next);
                 }
             }
         }

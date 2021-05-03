@@ -20,4 +20,38 @@ public class DepthFirst {
     {
         adj[verts].add(end);
     }
+
+    void DFSUtil(int verts, boolean visited[])
+    {
+        // Mark the current node as visited and print it
+        visited[verts] = true;
+        if (verts == 0)
+                System.out.print("A ");
+            else if (verts == 1)
+                System.out.print("B ");
+            else if (verts == 2)
+                System.out.print("C ");
+            else if (verts == 3)
+                System.out.print("D ");
+            else if (verts == 4)
+                System.out.print("E ");
+            else if (verts == 5)
+                System.out.print("F ");
+            else if (verts == 6)
+                System.out.print("G ");
+            else if (verts == 7)
+                System.out.print("H ");
+            else if (verts == 8)
+                System.out.print("I ");
+ 
+        // Recur for all the vertices adjacent to this
+        // vertex
+        Iterator<Integer> iter = adj[verts].listIterator();
+        while (iter.hasNext())
+        {
+            int next = iter.next();
+            if (!visited[next])
+                DFSUtil(next, visited);
+        }
+    }
 }
